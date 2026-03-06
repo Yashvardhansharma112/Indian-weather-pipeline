@@ -1,0 +1,67 @@
+HOW TO UPLOAD TO GITHUB
+========================
+
+STEP 1: Update README.md
+-------------------------
+Open README.md and replace:
+- "Your Name" → Your actual name
+- "yourprofile" → Your LinkedIn username
+- "yourusername" → Your GitHub username
+- "your.email@example.com" → Your email
+
+STEP 2: Update LICENSE
+-----------------------
+Open LICENSE and replace:
+- "[Your Name]" → Your actual name
+
+STEP 3: Create GitHub Repository
+---------------------------------
+1. Go to https://github.com/new
+2. Repository name: india-weather-dashboard
+3. Description: Real-time weather data pipeline using AWS Lambda, S3, and Power BI
+4. Public repository
+5. DON'T initialize with README
+6. Click "Create repository"
+
+STEP 4: Upload Files
+---------------------
+Option A: Using Git (Recommended)
+----------------------------------
+cd "d:\data science\1-aws\github_repo-climate"
+git init
+git add .
+git commit -m "Initial commit: India Weather Dashboard"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/india-weather-dashboard.git
+git push -u origin main
+
+Option B: Using GitHub Website
+-------------------------------
+1. Go to your new repository
+2. Click "uploading an existing file"
+3. Drag all files from github_repo-climate folder
+4. Commit changes
+
+STEP 5: Add Topics
+------------------
+On GitHub repo page:
+1. Click ⚙️ (settings icon) next to "About"
+2. Add topics: aws, lambda, s3, power-bi, python, data-engineering, weather-data, data-pipeline, automation, serverless
+3. Save changes
+
+STEP 6: Verify
+--------------
+✅ No credentials visible in any file
+✅ README looks professional
+✅ All files uploaded
+✅ Topics added
+
+STEP 7: Share on LinkedIn
+--------------------------
+Use the post from LINKEDIN_POST.txt
+Add your GitHub repo link
+Add screenshots if possible
+
+DONE! 🎉
+========
+Your project is now live on GitHub!

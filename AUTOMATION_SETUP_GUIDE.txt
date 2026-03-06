@@ -1,0 +1,122 @@
+AUTOMATED DAILY DATA UPDATE - COMPLETE SETUP
+============================================
+
+HOW IT WORKS
+------------
+1. Lambda collects weather data hourly → Saves to S3
+2. Script checks S3 daily for new data
+3. Appends ONLY new dates to CSV file
+4. Power BI auto-refreshes when opened
+5. Date dropdown shows all historical dates
+
+SETUP AUTOMATION (One-Time)
+----------------------------
+
+OPTION 1: Windows Task Scheduler (Recommended)
+-----------------------------------------------
+1. Press Win + R → Type: taskschd.msc → Enter
+2. Click "Create Basic Task"
+3. Name: "Weather Data Daily Update"
+4. Description: "Updates weather data CSV from AWS S3"
+5. Trigger: Daily
+6. Start time: 8:00 AM (or your preferred time)
+7. Action: Start a program
+8. Program: d:\data science\1-aws\Daily_Auto_Update.bat
+9. Click Finish
+
+Now it runs automatically every day at 8 AM!
+
+OPTION 2: Windows Startup (Runs on PC start)
+---------------------------------------------
+1. Press Win + R → Type: shell:startup → Enter
+2. Right-click → New → Shortcut
+3. Location: d:\data science\1-aws\Daily_Auto_Update.bat
+4. Name: Weather Data Update
+5. Click Finish
+
+Now it runs every time you start your computer!
+
+OPTION 3: Manual (Run when needed)
+-----------------------------------
+Double-click: Daily_Auto_Update.bat
+
+POWER BI SETUP
+--------------
+1. Open Power BI Desktop
+2. Get Data → CSV → india_weather_historical.csv
+3. Transform Data:
+   - date_formatted → Date type
+   - temp, feels_like → Decimal
+   - aqi, humidity, visibility, rain_chance → Whole Number
+4. Close & Apply
+
+5. Insert → Slicer
+   - Field: date_formatted
+   - Style: Dropdown
+   - Title: "Select Date"
+
+6. File → Options → Data Load
+   - Check: "Refresh data when opening the file"
+
+7. Save as: India_Weather_Dashboard.pbix
+
+DAILY WORKFLOW
+--------------
+Automated:
+1. Script runs at 8 AM (or on startup)
+2. New data appends to CSV
+3. Open Power BI → Auto-refreshes
+4. Select date from dropdown
+5. View weather analysis!
+
+Manual:
+1. Double-click: Daily_Auto_Update.bat
+2. Open Power BI
+3. Click Refresh button
+4. Done!
+
+FILE STRUCTURE
+--------------
+india_weather_historical.csv
+├── Columns: city, state, temp, feels_like, aqi, aqi_status, 
+│            uv_index, humidity, visibility, rain_chance, 
+│            timestamp, date, date_formatted
+├── Grows daily with new data
+└── Power BI reads this file
+
+BENEFITS
+--------
+✓ Single file - easy to manage
+✓ Historical data preserved
+✓ Only new data added (no duplicates)
+✓ Automatic daily updates
+✓ Date dropdown for any day
+✓ No manual work needed
+
+TROUBLESHOOTING
+---------------
+Q: No new data added?
+A: Lambda might not have run. Check S3 for new files.
+
+Q: Power BI not refreshing?
+A: Enable "Refresh data when opening file" in Options.
+
+Q: Task Scheduler not working?
+A: Check task history, ensure Python path is correct.
+
+VERIFY SETUP
+------------
+1. Run: python auto_update_data.py
+2. Check output - should show dates added
+3. Open CSV - verify data is there
+4. Open Power BI - check date dropdown
+5. Select different dates - visuals should update
+
+MONITORING
+----------
+- Check CSV file size (grows daily)
+- Verify latest date in dropdown
+- Lambda logs in CloudWatch
+- Task Scheduler history
+
+Your dashboard is now fully automated! 🎉

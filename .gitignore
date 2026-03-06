@@ -1,0 +1,46 @@
+# Credentials and sensitive files
+powerbi-credentials.txt
+*.pem
+*.key
+
+# Data files (too large for GitHub)
+*.csv
+*.json
+india_weather_historical.csv
+india_weather_data.json
+sample_output.json
+response.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Deployment packages
+lambda_deployment.zip
+
+# Python packages (Lambda dependencies)
+certifi/
+charset_normalizer/
+idna/
+requests/
+urllib3/
+*.dist-info/
+bin/
