@@ -88,8 +88,8 @@ aws s3 mb s3://your-bucket-name --region ap-south-1
 
 1. **Clone Repository**
 ```bash
-git clone https://github.com/yourusername/india-weather-dashboard.git
-cd india-weather-dashboard
+git clone https://github.com/Yashvardhansharma112/Indian-weather-pipeline
+cd india-weather-pipeline
 ```
 
 2. **Install Dependencies**
@@ -187,10 +187,11 @@ This project is open source and available under the MIT License.
 
 ## 👤 Author
 
-**Your Name**
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+Yash vardhan sharma
+- LinkedIn: https://www.linkedin.com/in/yash-vardhan-sharma6261499443/
+- GitHub: https://github.com/Yashvardhansharma112
+- Email: itsyashsharma01@gmail.com
+
 
 ## 🙏 Acknowledgments
 
@@ -208,9 +209,3 @@ For questions or collaboration:
 ---
 
 ⭐ If you found this project helpful, please give it a star!
-
-## 🔗 Related Projects
-
-- [Weather Forecasting ML Model](#)
-- [Climate Data Analysis](#)
-- [Air Quality Prediction](#)
